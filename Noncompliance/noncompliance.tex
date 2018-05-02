@@ -40,20 +40,63 @@ In addition, the \textbf{instrument variable} $Z_i$ is the random variable which
 There are 4 types of participants in an experiment: they are separated by what they would do if they received the instrument variable or not (whether they won the lottery):
 \begin{center}
     \begin{tabular}{c|ccc}
-        &&Lottery&Losers \\ 
+        &&Lottery Losers&($Z_i = 0$) \\ 
         \hline
          & &No Treatment($T_i=0$)&Treatment($T_i=1$) \\
-         Lottery&No Treatment ($T_i=0$)&Never Takers&Defiers  \\
-         Winners &Treatment ($T_i=1$)&Compliers&Always Takers \\
+         Lottery Winners &No Treatment ($T_i=0$)&Never Takers&Defiers  \\
+         ($Z_i = 1$) &Treatment ($T_i=1$)&Compliers&Always Takers \\
     \end{tabular}
 \end{center}
+A \textbf{never-taker} is a participant who will never take the treatment variable.
+For example, a never-taker in the charter school experiment is a participant who will never enroll in charter school, regardless if they won the lottery or not.
+\\
+A \textbf{complier} is a participant who will take the treatment variable if and only if he/she received the instrument variable. 
+These are the participants who enrolled in charter school if they won the lottery, and those who will not if they didn't win.
+\\
+An \textbf{always-taker} is a participant who will always take the treatment variable.
+They will enroll in charter no matter of outcome in winning the lottery.
+\\
+A \textbf{defier} is a participant who will go against the instrument variable. 
+For example, a defier will only enroll in charter schools if he/she does not win the lottery, and not enroll in charter schools if he/she wins the lottery.
+Normally, defiers are assumed to not exist, according to the monotonocity assumption (see below). 
+\\
 Notably, because we can only observe the partial outcomes, we do not what type each participant is!
 
 
 
 \section{Local Average Treatment Effect}
-\subsection{Calculations}
+\subsection{Calculating LATE}
+All of our calculations are based on the following assumption: 
+\begin{gather*}
+\textrm{Observed effect of instrument on outcome} = \\\textrm{Observed effect of instrument on treatment} \times \textrm{Effect of treatment on outcome}
+\end{gather*}
+We often call the effect of instrument on treatment the first link, and the effect of treatment on outcome the second link. Intuitively, if the first link is near 0, then the instrument variable will not affect the treatment and hence should not affect the outcome.
+On the other hand, if the second link is near 0, then the treatment will not affect the outcome, and hence the instrument should not affect the outcome either. 
+Together, these 2 intuitions form the basis of the exclusion restriction assumption (see below). 
+\\
+We then solve for the effect of treatment on outcome:
+\begin{gather*}
+\textrm{Effect of treatment on outcome} = \frac{\textrm{Observed effect of instrument on outcome}}{\textrm{Observed effect of instrument on treatment}}
+\end{gather*}
+The consequent effect of treatment on outcome, known as the local average treatment effect (LATE), is ultimately what we are interested in.
+\\\\
+\textbf{Calculating the Observed Effects}
+\\
+The observed effect of instrument on outcome is the difference between the average scores of the group that received the instrument variable (where $Z_i = 1$) and the group that did not (where $Z_i = 0$).
+\\
+The observed effect of instrument on treatment is the difference between the proportion that received the treatment of the group that received the instrument variable (where $Z_i = 1$) and the group that did not (where $Z_i = 0$).
 
 \subsection{Assumptions}
-There are 4 main assumptions for 
+The above equations indicate a few assumptions:
+\begin{itemize}
+    \item \textit{Relevance}: the instrument variable must have a causal effect on the treatment. For example, winning the lottery should have a causal effect on attending charter schools.
+    \item \textit{Independence}: the instrument variable should be randomly assigned.
+    \item \textit{Exclusion Restriction}: the instrument variable does not directly affect the outcome. This relates to the links above: if the second link is near 0, then the observed instrument variable's effect on the outcome should be near 0 also.
+    \item \textit{Monotonicity}: there are no defiers in the participants. 
+\end{itemize}
+
+\subsection{A Special Case: LATE = TOT}
+In some experiments, participants cannot receive the treatment unless they receive the instrument variable, so that there are no always-takers. 
+An example of this would be receiving a certain promotion for a sale, in which participants who did not receive the promotion cannot participate in the sale. 
+In this case, since there are no always-takers, the LATE is the same as the treatment on the treated (TOT), as only the compliers–those who were randomly assigned to receive the treatment–received the treatment. 
 \end{document}

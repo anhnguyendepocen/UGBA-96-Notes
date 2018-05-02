@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 MAY 2018 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 MAY 2018 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -428,19 +428,24 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (17.07477pt too wide) in paragraph at lines 42--49
+Overfull \hbox (53.07484pt too wide) in paragraph at lines 42--49
  [] 
  []
 
-[2] (./noncompliance.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
+
+ []
+
+[3] (./noncompliance.aux) ) 
 Here is how much of TeX's memory you used:
  1170 strings out of 492995
  12395 string characters out of 6132704
- 70774 words of memory out of 5000000
+ 71774 words of memory out of 5000000
  4760 multiletter control sequences out of 15000+600000
  9369 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,7n,20p,276b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,11n,20p,287b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
@@ -451,10 +456,10 @@ onts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti10.pfb>
-Output written on noncompliance.pdf (2 pages, 99492 bytes).
+Output written on noncompliance.pdf (3 pages, 109772 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

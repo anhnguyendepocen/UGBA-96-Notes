@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\title{Noncompliance}
+\author{Alan Liang}
+\date{May 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Motivation and Goal}
+
+Sometimes, we do not always have full control over who receives the treatment: it is often unethical and/or infeasible to mandate or exclude participants from receiving the treatment.
+For example, when conducting an experiment on the effects of charter schools on standardized test scores, it'd be infeasible to prevent or force certain participants to being enrolled in a charter school. 
+\\
+Furthermore, if we were to compare the naturally forming treatment and control groups, then the samples would not be randomly chosen, and hence would not reflect the true treatment effect. 
+For example, those who are determined to go to charter school even if they were assigned otherwise are perhaps more likely to place a larger emphasis on education and hence attain higher test scores.
+\\
+\\
+When conducting an experiment, noncompliance is a threat to the experiment's validity.
+Noncompliance is the phenomena in which participants assigned to their assigned treatment/control groups may not comply to stay within their assignment, instead opting for the opposite. 
+
+\section{Terminology} 
+\subsection{Notation and Experiment Setup}
+Noncompliance occurs when we cannot mandate or exclude participants from gaining the treatment.
+This generally occurs through experiments in which individuals are selected to be part of the treatment, but are not forced to join.
+In addition, it also does not necessarily mean that individuals that are not selected cannot gain the treatment. 
+Examples of these experiments include winning a lottery for attending charter schools or free healthcare, being selected to certain store promotions, and more. 
+It is important to keep in mind that in the examples above, attending charter schools or having free healthcare is the \textit{treatment variable}, which is what we are interested in determining the causal effect of on the outcome variable. 
+\\
+Our variables are denoted as follows: 
+\begin{itemize}
+    \item \textbf{Outcome}: a random variable denoted by $Y_i$ for a particular individual $i$.
+    \item \textbf{Treatment}: a random variable denoted by $T_i$ for a particular individual $i$.
+\end{itemize}
+In addition, the \textbf{instrument variable} $Z_i$ is the random variable which defines whether the individual is selected to be part of the treatment group (e.g. winning the lottery).
+
+\subsection{Types of participants}
+There are 4 types of participants in an experiment: they are separated by what they would do if they received the instrument variable or not (whether they won the lottery):
+\begin{center}
+    \begin{tabular}{c|ccc}
+        &&Lottery&Losers \\ 
+        \hline
+         & &No Treatment($T_i=0$)&Treatment($T_i=1$) \\
+         Lottery&No Treatment ($T_i=0$)&Never Takers&Defiers  \\
+         Winners &Treatment ($T_i=1$)&Compliers&Always Takers \\
+    \end{tabular}
+\end{center}
+Notably, because we can only observe the partial outcomes, we do not what type each participant is!
+
+
+
+\section{Local Average Treatment Effect}
+\subsection{Calculations}
+
+\subsection{Assumptions}
+There are 4 main assumptions for 
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\addtolength{\oddsidemargin}{-0.625in}
+\addtolength{\evensidemargin}{-0.625in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.5in}
+\title{Interference and Nonattrition}
+\author{Alan Liang}
+\date{May 2018}
+
+\begin{document}
+\maketitle
+
+\section{Interference}
+\subsection{Definitions}
+So far, we have assumed that there is no interference between the participants, especially those between the treatment and non-treatment groups.
+Interference is a large problem to experiments: as experimenters, we should always keep in mind of potential interference issues.
+Specifically, interference is the phenomena in which being administered the treatment or not may cause \textit{unintended} effects to other participants, which may in turn affect the outcome results.
+\\
+These unintended effects are known as \textbf{spillovers}. 
+Specifically, there are 3 types of spillovers:
+\begin{itemize}
+	\item \textbf{Behavioral Spillovers}: receiving or not receiving the treatment may affect behavior, hence changing the outcome. 
+	For example, if the treatment variable is receiving a bonus for an employee, this may discourage those in the control group, even though that on paper, nothing has changed to them. 
+	\item \textbf{Information Spillovers}: if the treatment is some type of information, those administered the treatment are free to pass the information on beyond the treatment group.
+	For example, seeing an advertisement may cause the 'participant' to share it to others, which would not allow us to measure how effective the advert itself was on the participant. 
+	\item \textbf{Market Spillovers}: due to a fixed supply or demand in the market, adjusting the supply or demand of the treatment group may negatively affect the control group.
+	For example, if the experiment is about working overtime in the rideshare market, if treatment group were to work more hours, there would be comparatively less demand for the control group. 
+	Hence, we would expect to see the control group's sales decrease despite having no change administered.
+\end{itemize}
+
+\subsection{Accounting for Interference}
+Generally, the main solution to deal with interference is to 'skirt around' it by conducting experiments on clusters or groups instead of individuals or units. 
+Every individual in the cluster will receive the same treatment or control assignment.
+In principle, the spillover effect will only occur within each group and not between groups, so that there will be no spillover effect between the control and treatment groups. 
+\\
+For example, continuing on with the example of the rideshare experiment, perhaps we would try to assign all of the drivers in one city to the treatment group, while assigning all drivers in another city to the control group. 
+This avoids the market spillover as the 2 cities would have different markets, and that no group will spillover to the other. 
+\\
+In addition to clustering based on location, we could cluster based on time (separating the treatment and control in different time periods).
+The key is that there should be no spillovers between the groups.
+
+\subsection{An Experiment to Measure Interference: Duflo and Saez (2003)}
+How can we measure interference?
+Two economists Emmanuel Saez (professor at Cal) and Esther Duflo set up a clever experiment in 2003 to measure the effects of spillovers within university departments.
+\\
+In the treatment clusters (departments), a random subset of individuals received an invitation and 20 dollar incentive to attend a tax-deferred retirement plan fair, while the rest did not.
+In the control departments, nobody received the invitation to the fair.
+\\
+The idea was that information about the info-session would spread within departments, causing perhaps some who did not receive the invitation to join due to spillovers.
+This creates 3 types of participants: the control who should have received no information, the treatment who received the invitation, and those who on paper were not treated but should have been informed of the fair from spillovers.
+\\
+The experiment found that those who received the invitation were 5 times more likely to attend the fair, and that those who benefitted from the spillover were also 3 times more likely to attend the fair: this 3 times increase is the measured effect of spillovers, which could be both due to information spillover and behavior spillover.
+
+\section{Attrition}
+\subsection{Definition}
+In many field experiments, participants can drop out of the experiment mid-way.
+This is known as attrition. 
+These results are normally not recorded, leading to potentially unaccounted for \textbf{attrition bias}. 
+\\
+For example, in lecture, measuring returning fighter planes' bullet holes to conclude that those were the most common section attacked is subject to attrition bias, as many planes did not return and 'dropped out', and could have been hit in completely different sections.
+\\
+Attrition may be due to many things.
+Generally, it is caused by receiving the treatment, for example attending a charter school may cause some unprepared students to drop out, hence biasing the ultimate outcome.
+However, attrition could also be due to the lack of treatment, or even interference. 
+
+\subsection{Accounting for Attrition}
+This course does not provide much to do about attrition :(
+\\
+Generally, we can try to minimize attrition by determining the reasons why participants are dropping out, and trying to minimize the possibility of participants dropping out without biasing the experiment. 
+In addition, we can try to select participants who are less likely to drop out before the experiment begins, but this may also be subject to selection bias. 
+\\
+Lastly, to get a feel for the attrition bias, we can try to \textbf{sign} the bias by estimating which way  attrition is biasing our results.
+Is the fact that we are not recording those who dropped out understating or overstating our recorded treatment effect? 
+\end{document}

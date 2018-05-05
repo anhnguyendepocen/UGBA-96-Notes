@@ -41,8 +41,8 @@ In fact, many confounding covariates contribute to this: perhaps a restaurant ma
 Matching is the most basic and probably most intuitive way to deal with possible covariates.
 At its core, matching simply compares a treated unit to similar non-treated unit(s) in order to \textbf{impute} the effect of the treatment.
 The large assumption matching makes is that if 2 units are similar in the feature(s) we observe and choose to match on, then they will be similar in all covariates and aspects, even the unobserved potential covariates.
-This is called the \textbf{selection on observations assumption}, which states that after we account for the covariates, the treatment group is as good as randomly selected and assigned, which would in turn mean that the treatment is independent of the potential outcome.
-In probability terms, we are assuming that a unit who receives the treatment will have the same potential outcomes as a similar unit on $X_i$ who does not receive the treatment:
+This is called the \textbf{selection on observations assumption}, which states that after we account for the covariates by conditioning on these observable variables, the treatment group is as good as randomly selected and assigned, which would in turn mean that the treatment is independent of the potential outcome.
+In probability terms, we are assuming that a unit who receives the treatment will have the same potential outcomes as a unit who does not receive the treatment, conditioned that they are similar on all observable variables $X_i$:
 $$E[Y_{i0} | D_i = 1, X_i] = E[Y_{i0} | D_i = 0, X_i]$$
 The conclusion is that we have essentially controlled for all possible covariates. 
 It's a naive assumption, but it's the best we got so far. 

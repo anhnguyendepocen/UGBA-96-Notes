@@ -44,11 +44,11 @@ So instead, in data 8 we've abstracted that away to a \texttt{minimize} function
 \subsection{Using \texttt{minimize}}
 In general, the function we build to pass into minimize will calculate and return the RMSE of the residuals.
 \lstinputlisting[language=Python]{minimize.py}
-Just a quick thing to keep in mind: here we are only doing column (array) calculations, thanks to NumPy.
+Keep in mind that here we are only doing column (array) calculations.
 
 \section{Multiple Regression and Controlling for Covariates}
 When many variables are involved in the linear regression, the idea of partial slopes comes in.
-Essentially, a partial slope for some variable $X$ signifies that, assuming that all other variables stay the same, a change in 1 unit of $X$ will be associated with the slope's change in the outcome. 
+Essentially, a partial slope for some variable $X$ signifies that, assuming all other variables stay the same, a change in 1 unit of $X$ will be associated with the slope's change in the outcome. 
 If you've taken a multivariate calculus course, the intuition should be pretty straightforward.
 \\
 We can leverage this definition and utilize multiple regression to control for other potential confounding variables.
@@ -60,5 +60,15 @@ Since the partial slope $\beta$ is defined to be the change on $Y$ from $X$ if n
 In terms of our example, $\beta$ would measure the increase in price for ever 1 sqft increase in area, assuming that the house has the same amount of bedrooms ($X_2$ is kept constant).
 \\
 As you can probably see, regression provides a natural method to take into account of and hence control for covariates. 
-It is much more effective than matching: instead of 'guessing' the treatment effect from comparing similar neighbors, we are predicitng the treatment effect from a linear regression formed by the entire data set, which is objectively has the least error.
+
+\subsection{Regression, Matching, and Causal Inference}
+Conceptually, regression is similar to matching in that both utilize the selection on the observables assumption, which assumes that conditioning on the observable variables is as good as random assignment.
+Under this assumption, we are then freely able to determine the causal effect of the treatment variable $X_1$ on the outcome $Y$.
+\\
+In general, regression is easier to implement than matching: instead of 'guessing' the treatment effect from comparing similar neighbors, we are predicting the treatment effect from a linear regression formed by the entire data set.
+Usually, both will yield have the same results. 
+\\
+However, there is a caveat with regression: linear regression, as the name implies, assumes that all variables have a linear relationship.
+This may not be true. 
+Hence, we may have to transform the data (for example by using logarithms) to make it linear first. 
 \end{document}

@@ -2,3 +2,4 @@
 \BOOKMARK [1][-]{section.2}{Doing Linear Regression}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Using minimize}{section.2}% 3
 \BOOKMARK [1][-]{section.3}{Multiple Regression and Controlling for Covariates}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Regression, Matching, and Causal Inference}{section.3}% 5

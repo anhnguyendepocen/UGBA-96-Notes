@@ -55,6 +55,7 @@ This measures the relationship between the omitted variable to the explanatory v
 Now, define $\gamma$:
 $$\gamma = \frac{\delta Y}{\delta A}$$
 This measures the relationship (partial slope) between the outcome and the omitted variable: how much does our outcome variable change for every unit change in the omitted variable, holding all other variables still.
+Note that unlike $\pi$, this is a partial slope, so it assumes that variables such as $X$ are being held constant.
 Together, the omitted variable bias is:
 $$\text{OVB} = \pi \times \gamma $$
 Very very informally (to build intuition only), notice that if we were to multiply $\pi$ and $\gamma$, we can cancel out the partial omitted variable:
@@ -65,5 +66,17 @@ Hence, the definition of the omitted variable bias is as follows:
 $$\text{OVB} = \beta^s - \beta^l = \pi \times \gamma = \frac{\text{d}A}{\text{d}X} \times \frac{\delta Y}{\delta A}$$
 
 \subsection{An example}
-I'm going to shamelessly steal this example from lecture.
+I'm going to shamelessly steal this example from lecture:
+\\
+Say you are trying to determine the effect of neighborhood income ($X$ from above) on coffee shop sales ($Y$ from above).
+A confounding factor may be the number of competitors nearby ($A$ from above).
+\\
+However, let us assume that we do not have access to $A$, so we can only try to determine the sign of the OVB.
+\\
+Let's first calculate $\gamma$, the change in number of coffee shops nearby times with respect to the change in local income.
+$\gamma$ should be positive as with an increase in local income, we should expect to see more competitors.
+\\
+$\pi$, the partial slope of sales with respect to number of competitors, should be negative: holding income the same, if there are more competitors, we should see a decrease in sales.
+\\
+Hence, combined, our omitted variable bias should be a negative number, which means that $\beta^s < \beta^l$, so that controlling for competitors, the effect of income on coffee sales is larger than had we not considered it.
 \end{document}

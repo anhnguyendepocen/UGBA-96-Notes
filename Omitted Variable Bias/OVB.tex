@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[makeroom]{cancel}
+\addtolength{\oddsidemargin}{-0.625in}
+\addtolength{\evensidemargin}{-0.625in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.5in}
+\title{Omitted Variable Bias}
+\author{Alan Liang}
+\date{May 2018}
+
+\begin{document}
+\maketitle
+\section{Motivation}
+From the last note, we've learned that linear regression can help us control for potential covariates.
+But what is the effect of not considering and controlling for covariates?
+\\
+In most real-life experiments, we will not have access to all the data of all possible covariates: so how can we get a feel for what direction the selection bias is going?
+\\
+As its name suggests, \textbf{omitted variable bias (OVB)} accounts for this. 
+For a particular omitted variable, OVB allows us to estimate the sign and magnitude of the bias associated with the variable.
+OVB calculuates this based on the omitted variable's relationship with other variables that we are taking into account of. 
+
+\section{The Omitted Variable Bias}
+\subsection{Intuition and Definition}
+Say you have measured explanatory variable $X$, covariate $A$, and outcome $Y$, but decided to naively not control for $A$. 
+Your singular linear regression is known as the \textbf{'short' regression}, and follows the format:
+$$Y = \alpha^s + \beta^s X$$
+On the other hand, in reality the relationship involves us controlling for $A$.
+This is known as the \textbf{'long' regression}:
+$$Y = \alpha^l + \beta^l X + \gamma A$$ 
+Note that $\alpha^l \neq \alpha^s$ and $\beta^l \neq \beta^s$, as one takes into consideration of the confounding variable.
+\\
+Intuitively, the difference in $\beta$, $\beta^s - \beta^l$, measures the difference in the slope if we did not account for our covaraite. 
+Assuming that $\beta^l$ is the true treatment effect slope (because we accounted for all possible covariates), then $\beta^s - \beta^l$ would be how wrong our short regression was.
+This is how we calculate the \textbf{omitted variable bias}:
+$$\text{OVB} = \beta^s - \beta^l$$
+
+\subsection{Derivation from Partial Slopes}
+In the example above, we knew the correct results going in: we knew that $A$ was the confounding covariate and had the data for A at every data point, allowing us to control for it in our linear regression.
+However, this does not happen in real life.
+In real life, we will not have recorded for $A$ and hence not have been able to determine $\beta^l$.
+\\
+In this case, what do we do?
+In essence, we are forced to look at the relationship of the omitted variable with variables we have data of.
+Following with the notation from above, define $\pi$:
+$$\pi = \frac{\text{d}A}{\text{d}X}$$
+This measures the relationship between the omitted variable to the explanatory variable: how much does our omitted variable change for every unit change in the explanatory variable?
+Now, define $\gamma$:
+$$\gamma = \frac{\delta Y}{\delta A}$$
+This measures the relationship (partial slope) between the outcome and the omitted variable: how much does our outcome variable change for every unit change in the omitted variable, holding all other variables still.
+Together, the omitted variable bias is:
+$$\text{OVB} = \pi \times \gamma $$
+Very very informally (to build intuition only), notice that if we were to multiply $\pi$ and $\gamma$, we can cancel out the partial omitted variable:
+$$\frac{\cancel{\text{d}A}}{\text{d}X} \times \frac{\delta Y}{\cancel{\delta A}} = \frac{\delta Y}{\delta X}$$
+These units adheres to what we want, the units of $\beta$: the change in outcome due to change in explanatory variable. 
+\\
+Hence, the definition of the omitted variable bias is as follows:
+$$\text{OVB} = \beta^s - \beta^l = \pi \times \gamma = \frac{\text{d}A}{\text{d}X} \times \frac{\delta Y}{\delta A}$$
+
+\subsection{An example}
+I'm going to shamelessly steal this example from lecture.
+\end{document}

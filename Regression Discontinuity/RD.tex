@@ -58,6 +58,9 @@ We can try to express these 2 disjointed lines as 1 function by creating an indi
 Then, we can combine the 2 disjointed linear regression lines:
 $$\hat{Y} = \alpha + \beta X + (\gamma - \alpha) \times \mathbb{I} + (\delta - \beta) X \times \mathbb{I}$$
 Notably, $\gamma - \alpha$ measures the direct jump in the observed variable at the cutoff, and $\delta - \beta$ measures the change in slope.
+Lastly, we can horizontally shift the axis to center around $X=c$:
+$$\hat{Y} = \alpha + \beta (X-c) + (\gamma - \alpha) \times \mathbb{I} + (\delta - \beta) (X-c) \times \mathbb{I}$$
+The treatment effect is determined by $\beta$, the measure of the jump.
 
 
 \subsection{Assumptions of Regression Discontinuity}

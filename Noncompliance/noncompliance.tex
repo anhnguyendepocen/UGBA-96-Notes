@@ -99,11 +99,11 @@ Note that the derivation and definitions above are not particularly rigorous, bu
 \subsection{Calculating the Two Stages}
 \textbf{1st Stage}: The observed effect of the instrument variable on the treatment variable is the difference between the proportion that took the treatment in the group that received the instrument variable and the proportion that took the treatment in the group that did not:
 \\
-\centerline{$E[Y_i|Z_i=1]-E[Y_i|Z_i=0]$}
+\centerline{$E[T_i|Z_i=1]-E[T_i|Z_i=0]$}
 \textbf{2nd Stage}: The observed effect of the instrument variable on the outcome is also known as the \textbf{intent-to-treat effect (ITT)}. 
 It describes the difference between the average outcome of the group that received the instrument variable and the average outcome of the group that did not:
 \\
-\centerline{$E[T_i|Z_i=1]-E[T_i|Z_i=0]$}
+\centerline{$E[Y_i|Z_i=1]-E[Y_i|Z_i=0]$}
 \\
 We can then combine these 2 results by dividing first by the second to get the LATE:
 \begin{gather*}
